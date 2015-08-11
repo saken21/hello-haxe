@@ -2,20 +2,16 @@ package src;
 
 import js.Browser;
 import js.JQuery;
+import src.selectTheme.View;
  
 class Main {
-	
-	public static function main():Void {
-		var newText:String = 'Helllo-Haxe';
-		var element = Browser.document.getElementsByTagName('p');
-		trace(untyped element);
 
-    new JQuery( 'p' ).text( newText );
-    new JQuery( 'p' ).click( function() { 
-      JQuery.cur.text( 'change' );
-    });
+ 	public static function main():Void {
+ 		new JQuery('document').ready(init);
+ 	}
 
-		
+  private static function init(event:JqEvent):Void {
+  	View.init();
   }
 
 }
