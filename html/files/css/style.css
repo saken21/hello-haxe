@@ -5,15 +5,32 @@
 /*-------------------------------------------------------------------------
 	All
 /*-----------------------------------------------------------------------*/
-
+#all {
+	width: 60%;
+	margin: 0 auto;
+}
 
 #selectTheme {
-
+	margin: 80px 0 0 0;
+	text-align: center;
 }
 
-#selectTheme #btn {
-	display: inline-block;
-	padding: 2% 4%;
-	border-radius: 3px;
-	background-color: #e8e8e8;
-}
+	#selectTheme div {
+		height: 200px;
+	}
+
+		#selectTheme div p {
+			float: left;
+			width: 50%;
+			color: #3b3b3b;
+			font-size: 30px;
+		}
+
+	#selectTheme #btn {
+		display: inline-block;
+		padding: 10px 40px;
+		border-radius: 3px;
+		background-color: #e8e8e8;
+		cursor: pointer;
+		color: #3b3b3b;
+	}

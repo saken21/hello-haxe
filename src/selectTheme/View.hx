@@ -14,7 +14,7 @@ class View {
   static var element:Dynamic;
 	
 	public static function init():Void {
-		words        = ['A','B','C','D','E','F','G','H'];
+		words        = [];
     firstTarget  = new JQuery('.firstTxt');
     secondTarget = new JQuery('.secondTxt');
     btn          = new JQuery('#btn');
@@ -30,6 +30,7 @@ class View {
 
   static function clickBtn():Void { 
     btn.click(function() {
+      getTextArea();
       setText(currentClick(),words,randomNumber());
     });
   }
@@ -40,6 +41,7 @@ class View {
 
   static function currentClick():Dynamic {
     if ( current == 0 ) {
+      btn.text("select");
       element = firstTarget;
       current++;
     } else if ( current == 1 ) {
@@ -56,6 +58,15 @@ class View {
   static function clearTarget() {
     firstTarget.text("");
     secondTarget.text("");
+    btn.text("clear");
+  }
+
+  static function getTextArea():Void {
+    btn.click(function() {
+      var text:String = new JQuery('#textArea').val();
+      words = text.split(',');
+      trace(words);
+    });
   }
 
 }
